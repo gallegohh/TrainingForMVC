@@ -1,0 +1,47 @@
+﻿@using TrainingForMVC.Models
+@model List<Employees>
+
+@{
+    ViewBag.Title = "Empleados";
+}
+
+@section scripts{
+
+    <script>
+        $('.add-employee').click(function (e) {
+            location.href = "/Employees/Create";
+        });
+    </script>
+
+}
+
+<h1 class="display-4 text-center">Nuestros empleados</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 text-center my-3">
+            <div class="container employee-card py-3 px-3">
+                <h3 class="text-xl-center">#@item.EmployeeID</h3>
+                <h4>@item.FirstName</h4>
+                <h4>@item.LastName</h4>
+                <div class="container">
+                    <h6 class="text-secondary">@item.City (@item.Country)</h6>
+                    <h6 class="text-secondary">@item.Extension</h6>
+                    <h6 class="text-secondary">@item.HomePhone</h6>
+                    <h6 class="text-secondary">@item.BirthDate</h6>
+                </div>
+            </div>
+
+        </div>
+    }
+    <div class="col-md-3 text-center my-3 add-employee">
+        <div class="container employee-card py-3 px-3 d-table">
+            <div class="container d-table-cell">
+                <h1 class="display-1">+</h1>
+                <h3>Añadir nuevo empleado</h3>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -45,7 +45,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -148,10 +156,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Alphabetical_list_of_products.cs" />
+    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Category_Sales_for_1997.cs" />
+    <Compile Include="Models\Current_Product_List.cs" />
+    <Compile Include="Models\CustomerDemographics.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\Invoices.cs" />
+    <Compile Include="Models\ModelNorthwind.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Orders_Qry.cs" />
+    <Compile Include="Models\Order_Details.cs" />
+    <Compile Include="Models\Order_Details_Extended.cs" />
+    <Compile Include="Models\Order_Subtotals.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Products_Above_Average_Price.cs" />
+    <Compile Include="Models\Products_by_Category.cs" />
+    <Compile Include="Models\Product_Sales_for_1997.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Sales_by_Category.cs" />
+    <Compile Include="Models\Sales_Totals_by_Amount.cs" />
+    <Compile Include="Models\Shippers.cs" />
+    <Compile Include="Models\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="Models\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="Models\Suppliers.cs" />
+    <Compile Include="Models\Territories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +198,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

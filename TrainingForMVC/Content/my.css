@@ -5,3 +5,12 @@
 .footer{
     background-color:aliceblue;
 }
+
+.employee-card{
+    border: 2px solid #afc7ff;
+    border-radius: 2em;
+}
+
+.add-employee:hover{
+    cursor: pointer;
+}
