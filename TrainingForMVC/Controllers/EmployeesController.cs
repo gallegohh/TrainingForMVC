@@ -24,6 +24,23 @@ namespace TrainingForMVC.Controllers
             return View(new Employees());
         }
 
+        // POST: Employees/Create
+        [HttpPost]
+        public ActionResult Create(Employees employee)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Employees.Add(employee);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(employee);
+            }
+        }
+
         public EmployeesController()
         {
             db = new ModelNorthwind();
